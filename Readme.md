@@ -13,3 +13,8 @@ A [classe](src/main/java/gov/rfb/nfeouro/model/NotaOuroCliente.java) que represe
 O tratamento das respostas deve ser realizado na implementação do cliente pelos usuários.
 Os exemplos de respostas podem ser encontrados no [*Swagger*](https://hom-nfoe.estaleiro.serpro.gov.br/API/swagger/index.html) da API.</br></br>
 Exemplos de uso encontram-se na classe de [Testes](src/test/java/gov/rfb/Testes.java).
+
+## Clientes em outras linguagens
+
+O cliente em Python 3 pode ser encontrado em: </br>
+[https://github.com/rscarvalho90/NF-e-Ouro-Python](https://github.com/rscarvalho90/NF-e-Ouro-Python)
