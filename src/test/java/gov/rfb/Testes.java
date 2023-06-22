@@ -17,7 +17,7 @@ import java.security.cert.CertificateException;
 public class Testes {
 
     @Test
-    public void importaCerificadoTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, InvalidAlgorithmParameterException, MarshalException, XMLSignatureException, KeyException {
+    public void enviaDaoTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, InvalidAlgorithmParameterException, MarshalException, XMLSignatureException, KeyException {
         NotaOuroCliente notaOuroCliente = new NotaOuroCliente(AmbienteEnum.HOMOLOGACAO, "/home/rafael/Projetos/NF-e Ouro Java/src/main/resources/certificados_homologacao/Cert_03763656000154.p12",
                                                             "senha1");
 
@@ -25,7 +25,7 @@ public class Testes {
     }
 
     @Test
-    public void consultaPorNsuTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, InvalidAlgorithmParameterException, MarshalException, XMLSignatureException, KeyException {
+    public void consultaPorNsuTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyException {
         NotaOuroCliente notaOuroCliente = new NotaOuroCliente(AmbienteEnum.HOMOLOGACAO, "/home/rafael/Projetos/NF-e Ouro Java/src/main/resources/certificados_homologacao/Cert_03763656000154.p12",
                 "senha1");
 
@@ -33,7 +33,7 @@ public class Testes {
     }
 
     @Test
-    public void consultaPorChaveTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, InvalidAlgorithmParameterException, MarshalException, XMLSignatureException, KeyException {
+    public void consultaPorChaveTeste() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyException {
         NotaOuroCliente notaOuroCliente = new NotaOuroCliente(AmbienteEnum.HOMOLOGACAO, "/home/rafael/Projetos/NF-e Ouro Java/src/main/resources/certificados_homologacao/Cert_03763656000154.p12",
                 "senha1");
 
