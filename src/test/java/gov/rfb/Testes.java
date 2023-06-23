@@ -21,7 +21,7 @@ public class Testes {
         NotaOuroCliente notaOuroCliente = new NotaOuroCliente(AmbienteEnum.HOMOLOGACAO, "/home/rafael/Projetos/NF-e Ouro Java/src/main/resources/certificados_homologacao/Cert_03763656000154.p12",
                                                             "senha1");
 
-        notaOuroCliente.enviaDao("/home/rafael/Projetos/NF-e Ouro Java/src/test/resources/exemplos/primeiraAquisicao_03.xml");
+        notaOuroCliente.enviaDao("/home/rafael/Projetos/NF-e Ouro Java/src/test/resources/exemplos/exDaoPrimeiraVenda01.xml");
     }
 
     @Test

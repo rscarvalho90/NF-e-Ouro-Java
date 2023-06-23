@@ -136,6 +136,25 @@ public class NotaOuroCliente {
         return resposta;
     }
 
+    /**
+     * Assina um XML com certificado do tipo A1.
+     *
+     * @param xmlPath Path (local, caminho) do arquivo XML a ser enviado.
+     * @return XML, em formato String, assinado.
+     * @throws CertificateException
+     * @throws KeyStoreException
+     * @throws IOException
+     * @throws NoSuchAlgorithmException
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws UnrecoverableKeyException
+     * @throws XPathExpressionException
+     * @throws TransformerException
+     * @throws InvalidAlgorithmParameterException
+     * @throws KeyException
+     * @throws MarshalException
+     * @throws XMLSignatureException
+     */
     private String assinaXml(String xmlPath) throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, ParserConfigurationException, SAXException, UnrecoverableKeyException, XPathExpressionException, TransformerException, InvalidAlgorithmParameterException, KeyException, MarshalException, XMLSignatureException {
         // Importa um certificado tipo A1
         final KeyStore keyStore = new CertificadosUtil().importaCertificados(this.pathCertificado, this.senhaCertificado);
@@ -193,6 +212,11 @@ public class NotaOuroCliente {
         return xml;
     }
 
+    /**
+     * Finaliza o XML já assinado para envio pelo serviço.
+     * @param xmlTxt XML, em formato String, a ser formatado.
+     * @return XML, em formato String, pronto para envio pelo serviço.
+     */
     private String finalizaXml(String xmlTxt) {
         xmlTxt = xmlTxt.replaceAll(" standalone=\"no\"", "");
         xmlTxt = xmlTxt.replaceAll("&#13;", "");
@@ -204,6 +228,11 @@ public class NotaOuroCliente {
         return xmlTxt;
     }
 
+    /**
+     * Configura o XML antes da assinatura.
+     * @param xmlTxt XML, em formato String, a ser configurado.
+     * @return XML, em formato String, para ser assinado.
+     */
     private String configuraXml(String xmlTxt) {
         xmlTxt = xmlTxt.replaceAll("\r", "");
         xmlTxt = xmlTxt.replaceAll("\n", "");
@@ -213,12 +242,30 @@ public class NotaOuroCliente {
         return xmlTxt;
     }
 
+    /**
+     * @return Retorna o IP (público) atual do cliente.
+     * @throws IOException
+     * @throws UnrecoverableKeyException
+     * @throws CertificateException
+     * @throws KeyStoreException
+     * @throws NoSuchAlgorithmException
+     * @throws KeyManagementException
+     */
     private String getIp() throws IOException, UnrecoverableKeyException, CertificateException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         final String resposta = new HttpsUtil().doHttpsRequest("https://api.myip.com", MetodoHttpEnum.GET, null, null, false);
 
         return new ObjectMapper().readValue(resposta.toString(), ObjectNode.class).get("ip").asText();
     }
 
+    /**
+     * @return Retorna os cabeçalhos-padrão para as requisições ao serviço.
+     * @throws IOException
+     * @throws CertificateException
+     * @throws KeyStoreException
+     * @throws NoSuchAlgorithmException
+     * @throws UnrecoverableKeyException
+     * @throws KeyManagementException
+     */
     private Map<String, String> cabecalhosPadrao() throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyManagementException {
         String ip = getIp();
 

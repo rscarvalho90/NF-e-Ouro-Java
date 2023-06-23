@@ -124,6 +124,9 @@ public class HttpsUtil {
     }
 }
 
+/**
+ * Classe em que ignora a verificação do hostname e do certificado.
+ */
 class HostNameVerifierCustomizado implements HostnameVerifier {
 
     @Override

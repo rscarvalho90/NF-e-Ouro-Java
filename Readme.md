@@ -1,6 +1,6 @@
 # NF-e Ouro (Nota Fiscal Eletrônica do Ouro)
 
-Este é um repositório de exemplo, em Java 17, de integração da Nota Fiscal Eletrônica do Ouro com os serviços disponibilizados pela respectiva API.
+Este é um repositório de exemplo, em Java, de integração da Nota Fiscal Eletrônica do Ouro com os serviços disponibilizados pela respectiva API.
 
 ## Dependências
 
@@ -18,3 +18,6 @@ Exemplos de uso encontram-se na classe de [Testes](src/test/java/gov/rfb/Testes.
 
 O cliente em Python 3 pode ser encontrado em: </br>
 [https://github.com/rscarvalho90/NF-e-Ouro-Python](https://github.com/rscarvalho90/NF-e-Ouro-Python)
+
+O cliente em Node.js (TypeScript) pode ser encontrado em: </br>
+[https://github.com/rscarvalho90/NF-e-Ouro-Node.js](https://github.com/rscarvalho90/NF-e-Ouro-Node.js)
